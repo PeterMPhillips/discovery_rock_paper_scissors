@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'futuristfixed';
+  src: url('fonts/futuristfw-webfont.eot');
+  src: url('fonts/futuristfw-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/futuristfw-webfont.woff2') format('woff2'),
+       url('fonts/futuristfw-webfont.woff') format('woff'),
+       url('fonts/futuristfw-webfont.ttf') format('truetype'),
+       url('fonts/futuristfw-webfont.svg#futurist_fixed-widthregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration:none;
+}
+#background {
+  width:100%;
+  height:calc(100% - 10px);
+  font-family: futuristfixed;
+  font-size:18px;
+  color:#ccc;
+  cursor: default;
+}
+
+#background p {
+  margin:5px;
+  line-height:20px;
+}
+
+.title {
+  color:#000
+}
+
+.slow {
+  transition:color 2s;
+}
+
+.quick {
+  transition:color 0.5s;
+}
+
+.prev_background {
+  color: #ccc;
+}
+
+.highlight.display, .prev_highlight {
+  color: #666;
+}
+
+a.highlight.display:hover {
+  color: #00708c;
+}
+
+.lowlight.display, .prev_lowlight {
+  color: #999;
+}
+
+.selected.display, .prev_selected, .clickable:hover {
+  color: #a81a12;
+}
+
+.clickable {
+  cursor: pointer;
+}

@@ -1,0 +1,398 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "games",
+    "outputs": [
+      {
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "name": "start",
+        "type": "uint256"
+      },
+      {
+        "name": "winner",
+        "type": "address"
+      },
+      {
+        "name": "player1",
+        "type": "address"
+      },
+      {
+        "name": "player2",
+        "type": "address"
+      },
+      {
+        "name": "purse",
+        "type": "uint256"
+      },
+      {
+        "name": "cut",
+        "type": "uint256"
+      },
+      {
+        "name": "bet1",
+        "type": "uint256"
+      },
+      {
+        "name": "bet2",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "earnings",
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [],
+    "name": "enigma",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "name": "_enigmaAddress",
+        "type": "address"
+      },
+      {
+        "name": "_ownerPercent",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "gameID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "winner",
+        "type": "address"
+      }
+    ],
+    "name": "Winner",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "gameID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "player1",
+        "type": "address"
+      }
+    ],
+    "name": "NewGame",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "gameID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "Withdraw",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "gameID",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "name": "player",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "name": "bet",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "firstBet",
+        "type": "bool"
+      }
+    ],
+    "name": "BetPlaced",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "name": "gameID",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "purse",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "name": "cut",
+        "type": "uint256"
+      }
+    ],
+    "name": "Purse",
+    "type": "event"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "gameID",
+        "type": "uint256"
+      },
+      {
+        "name": "player1",
+        "type": "address"
+      }
+    ],
+    "name": "newGame",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "gameID",
+        "type": "uint256"
+      }
+    ],
+    "name": "placeBet",
+    "outputs": [],
+    "payable": true,
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "gameID",
+        "type": "uint256"
+      },
+      {
+        "name": "player2",
+        "type": "address"
+      },
+      {
+        "name": "winner",
+        "type": "address"
+      }
+    ],
+    "name": "setWinner",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "gameID",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdraw",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": false,
+    "inputs": [
+      {
+        "name": "gameID",
+        "type": "uint256"
+      }
+    ],
+    "name": "cancelBet",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "gameID",
+        "type": "uint256"
+      }
+    ],
+    "name": "getGame",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      },
+      {
+        "name": "",
+        "type": "address"
+      },
+      {
+        "name": "",
+        "type": "address"
+      },
+      {
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "gameID",
+        "type": "uint256"
+      }
+    ],
+    "name": "getWinner",
+    "outputs": [
+      {
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "gameID",
+        "type": "uint256"
+      }
+    ],
+    "name": "getStatus",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "_address",
+        "type": "address"
+      }
+    ],
+    "name": "getEarnings",
+    "outputs": [
+      {
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
